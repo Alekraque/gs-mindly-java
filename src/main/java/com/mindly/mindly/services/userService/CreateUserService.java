@@ -13,21 +13,6 @@ public class CreateUserService implements UserDataServiceInterface{
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-//    public User createUser(UserDataRequestDto userDataRequestDto) {
-//
-//        if (userRepository.existsByEmail(userDataRequestDto.getEmail())) {
-//            throw new IllegalArgumentException("E-mail já cadastrado");
-//        }
-//
-//        User user = User.builder()
-//                .nome(userDataRequestDto.getNomeCompleto())
-//                .email(userDataRequestDto.getEmail())
-//                .password(passwordEncoder.encode(userDataRequestDto.getSenha()))
-//                .build();
-//
-//        return userRepository.save(user);
-//    }
-
     @Override
     public User execute(User user) {
 

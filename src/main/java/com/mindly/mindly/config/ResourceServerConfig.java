@@ -41,6 +41,8 @@ public class ResourceServerConfig {
                         .requestMatchers(
                                 "/api/auth/register",
                                 "/api/auth/login",
+                                "api/tasks/create",
+                                "/api/tasks/update/{id}",
                                 "/v3/api-docs/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
