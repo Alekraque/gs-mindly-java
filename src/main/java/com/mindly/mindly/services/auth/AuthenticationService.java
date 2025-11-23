@@ -35,6 +35,7 @@ public class AuthenticationService {
                 .nome(request.getNome())
                 .username(request.getUsername())
                 .email(request.getEmail())
+                .documento(request.getDocumento())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();

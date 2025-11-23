@@ -39,6 +39,5 @@ public class Task {
 
     private Integer tempoEstimadoMin;
 
-
     private LocalDateTime criadoEm;
 }

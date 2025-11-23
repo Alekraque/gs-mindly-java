@@ -54,8 +54,8 @@ public class User implements UserDetails {
 
     private LocalDateTime criadoEm;
 
-    @OneToMany(mappedBy = "task")
-    private List<Task> tasks = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Task> tasks;
 
     @Enumerated(EnumType.STRING)
     private Role role = Role.USER;
