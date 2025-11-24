@@ -20,9 +20,6 @@ public class CreateTaskService {
 
     public Task createTask(TaskCreateRequest task) {
 
-        String email = SecurityContextHolder.getContext().getAuthentication().getName();
-
-        User usuario = userRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         Task taskToSave = Task.builder()
                 .titulo(task.titulo())
@@ -30,7 +27,6 @@ public class CreateTaskService {
                 .status(task.status())
                 .tempoEstimadoMin(task.tempoEstimadoMin())
                 .criadoEm(LocalDateTime.now())
-                .usuario(usuario) // aqui eu to atribuindo a task pro usuario logado
                 .build();
 
         return taskRepository.save(taskToSave);
