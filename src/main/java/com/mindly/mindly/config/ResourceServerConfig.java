@@ -43,6 +43,7 @@ public class ResourceServerConfig {
                                 "/api/auth/login",
                                 "api/tasks/create",
                                 "/api/tasks/update/{id}",
+                                "/api/tasks/buscar",
                                 "/v3/api-docs/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
