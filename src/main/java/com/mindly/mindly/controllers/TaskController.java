@@ -5,6 +5,7 @@ import com.mindly.mindly.domains.Task;
 import com.mindly.mindly.dto.request.TaskCreateRequest;
 import com.mindly.mindly.dto.request.TaskUpdateRequest;
 import com.mindly.mindly.services.taskService.CreateTaskService;
+import com.mindly.mindly.services.taskService.DeleteTasksService;
 import com.mindly.mindly.services.taskService.EditTaskService;
 import com.mindly.mindly.services.taskService.GetTasksService;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ public class TaskController {
     private final CreateTaskService taskService;
     private final EditTaskService editTaskService;
     private final GetTasksService getTasksService;
+    private final DeleteTasksService deleteTasksService;
 
     @PostMapping("/create")
     public ResponseEntity<Task> createTask(@RequestBody TaskCreateRequest task) {
@@ -35,5 +37,11 @@ public class TaskController {
     @GetMapping("/buscar")
     public ResponseEntity<List<Task>> findAllTasks() {
         return ResponseEntity.ok(getTasksService.getTasks());
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable String id) {
+        deleteTasksService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

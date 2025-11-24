@@ -44,6 +44,7 @@ public class ResourceServerConfig {
                                 "api/tasks/create",
                                 "/api/tasks/update/{id}",
                                 "/api/tasks/buscar",
+                                "/api/tasks/delete/{id}",
                                 "/v3/api-docs/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
